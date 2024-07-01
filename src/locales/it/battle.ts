@@ -54,7 +54,7 @@ export const battle: SimpleTranslationEntries = {
   "escapeVerbFlee": "fuggendo",
   "notDisabled": "{{pokemonName}}'s {{moveName}} non è più\ndisabilitata!",
   "skipItemQuestion": "Sei sicuro di non voler prendere nessun oggetto?",
-  "assaultVestRestriction": "The assault vest prevents the use of any non-offensive moves.",
+  "assaultVestRestriction": "Il corpetto assalto previene l'utilizzo di mosse di stato.",
   "eggHatching": "Oh!",
   "ivScannerUseQuestion": "Vuoi usare lo scanner di IV su {{pokemonName}}?",
   "wildPokemonWithAffix": "{{pokemonName}} selvatico",
