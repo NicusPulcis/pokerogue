@@ -2,7 +2,7 @@ import { StatusEffectTranslationEntries } from "#app/interfaces/locales.js";
 
 export const statusEffect: StatusEffectTranslationEntries = {
   none: {
-    name: "None",
+    name: "Nessuno",
     description: "",
     obtain: "",
     obtainSource: "",
@@ -11,57 +11,57 @@ export const statusEffect: StatusEffectTranslationEntries = {
     heal: ""
   },
   poison: {
-    name: "Poison",
-    description: "poisoning",
-    obtain: "{{pokemonNameWithAffix}}\nwas poisoned!",
-    obtainSource: "{{pokemonNameWithAffix}}\nwas poisoned by {{sourceText}}!",
-    activation: "{{pokemonNameWithAffix}} is hurt\nby poison!",
-    overlap: "{{pokemonNameWithAffix}} is\nalready poisoned!",
-    heal: "{{pokemonNameWithAffix}} was\ncured of its poison!"
+    name: "Veleno",
+    description: "avvelenato",
+    obtain: "{{pokemonNameWithAffix}}\nè stato avvelenato!",
+    obtainSource: "{{pokemonNameWithAffix}}\nè stato avvelenato da {{sourceText}}!",
+    activation: "{{pokemonNameWithAffix}} subisce danni per\nvia del veleno!",
+    overlap: "{{pokemonNameWithAffix}} è\ngià avvelenato!",
+    heal: "{{pokemonNameWithAffix}} non\nè più avvelenato!"
   },
   toxic: {
-    name: "Toxic",
-    description: "poisoning",
-    obtain: "{{pokemonNameWithAffix}}\nwas badly poisoned!",
-    obtainSource: "{{pokemonNameWithAffix}}\nwas badly poisoned by {{sourceText}}!",
-    activation: "{{pokemonNameWithAffix}} is hurt\nby poison!",
-    overlap: "{{pokemonNameWithAffix}} is\nalready poisoned!",
-    heal: "{{pokemonNameWithAffix}} was\ncured of its poison!"
+    name: "Iperavvelenamento",
+    description: "iperavvelenato",
+    obtain: "{{pokemonNameWithAffix}}\nè stato iperavvelenato!",
+    obtainSource: "{{pokemonNameWithAffix}}\nè stato iperavvelenato da {{sourceText}}!",
+    activation: "{{pokemonNameWithAffix}} subisce danni per\nvia dell'iperavvelenamento!",
+    overlap: "{{pokemonNameWithAffix}} è\ngià iperavvelenato!",
+    heal: "{{pokemonNameWithAffix}} non\nè più iperavvelenato!"
   },
   paralysis: {
-    name: "Paralysis",
-    description: "paralysis",
-    obtain: "{{pokemonNameWithAffix}} was paralyzed,\nIt may be unable to move!",
-    obtainSource: "{{pokemonNameWithAffix}} was paralyzed by {{sourceText}},\nIt may be unable to move!",
-    activation: "{{pokemonNameWithAffix}} is paralyzed!\nIt can't move!",
-    overlap: "{{pokemonNameWithAffix}} is\nalready paralyzed!",
-    heal: "{{pokemonNameWithAffix}} was\nhealed of paralysis!"
+    name: "Paralisi",
+    description: "paralizzato",
+    obtain: "{{pokemonNameWithAffix}} è stato paralizzato,\npotrebbe non riuscire a muoversi!",
+    obtainSource: "{{pokemonNameWithAffix}} è stato paralizzato da {{sourceText}},\npotrebbe non riuscire a muoversi!",
+    activation: "{{pokemonNameWithAffix}} è paralizzato!\nNon riesce a muoversi!",
+    overlap: "{{pokemonNameWithAffix}} è\ngià paralizzato!",
+    heal: "{{pokemonNameWithAffix}} non\nè più paralizzato!"
   },
   sleep: {
-    name: "Sleep",
-    description: "sleep",
-    obtain: "{{pokemonNameWithAffix}}\nfell asleep!",
-    obtainSource: "{{pokemonNameWithAffix}}\nfell asleep from {{sourceText}}!",
-    activation: "{{pokemonNameWithAffix}} is fast asleep.",
-    overlap: "{{pokemonNameWithAffix}} is\nalready asleep!",
-    heal: "{{pokemonNameWithAffix}} woke up!"
+    name: "Sonno",
+    description: "addormentato",
+    obtain: "{{pokemonNameWithAffix}}\nsi è addormentato!",
+    obtainSource: "{{pokemonNameWithAffix}}\nsi è addormentato per via di {{sourceText}}!",
+    activation: "{{pokemonNameWithAffix}} dorme.",
+    overlap: "{{pokemonNameWithAffix}} sta\ngià dormendo!",
+    heal: "{{pokemonNameWithAffix}} si è svegliato!"
   },
   freeze: {
-    name: "Freeze",
-    description: "freezing",
-    obtain: "{{pokemonNameWithAffix}}\nwas frozen solid!",
-    obtainSource: "{{pokemonNameWithAffix}}\nwas frozen solid by {{sourceText}}!",
-    activation: "{{pokemonNameWithAffix}} is\nfrozen solid!",
-    overlap: "{{pokemonNameWithAffix}} is\nalready frozen!",
-    heal: "{{pokemonNameWithAffix}} was\ndefrosted!"
+    name: "Congelamento",
+    description: "congelato",
+    obtain: "{{pokemonNameWithAffix}}\nè stato congelato!",
+    obtainSource: "{{pokemonNameWithAffix}}\nè stato congelato da {{sourceText}}!",
+    activation: "{{pokemonNameWithAffix}} è\ncongelato!",
+    overlap: "{{pokemonNameWithAffix}} è\ngià congelato!",
+    heal: "{{pokemonNameWithAffix}} non\nè più congelato!"
   },
   burn: {
-    name: "Burn",
-    description: "burn",
-    obtain: "{{pokemonNameWithAffix}}\nwas burned!",
-    obtainSource: "{{pokemonNameWithAffix}}\nwas burned by {{sourceText}}!",
-    activation: "{{pokemonNameWithAffix}} is hurt\nby its burn!",
-    overlap: "{{pokemonNameWithAffix}} is\nalready burned!",
-    heal: "{{pokemonNameWithAffix}} was\nhealed of its burn!"
+    name: "Scottatura",
+    description: "scottato",
+    obtain: "{{pokemonNameWithAffix}}\nè stato scottato!",
+    obtainSource: "{{pokemonNameWithAffix}}\nè stato scottato da {{sourceText}}!",
+    activation: "{{pokemonNameWithAffix}} subisce danni\nper via della scottatura!",
+    overlap: "{{pokemonNameWithAffix}} è\ngià scottato!",
+    heal: "{{pokemonNameWithAffix}} non\nè più scottato!"
   },
 } as const;
