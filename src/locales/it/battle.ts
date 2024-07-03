@@ -132,5 +132,5 @@ export const battle: SimpleTranslationEntries = {
   "battlerTagsSaltCuredLapse": "{{pokemonNameWithAffix}} viene colpito da {{moveName}}!",
   "battlerTagsCursedOnAdd": "{{pokemonNameWithAffix}} ha sacrificato metà dei suoi PS per\nlanciare una maledizione su {{pokemonName}}!",
   "battlerTagsCursedLapse": "{{pokemonNameWithAffix}} subisce la maledizione!",
-  "battlerTagsPowerTrickApply": "{{pokemonNameWithAffix}} switched its Attack and Defense!"
+  "battlerTagsPowerTrickApply": "{{pokemonNameWithAffix}} ha scambiato il suo Attacco e la sua Difesa!"
 } as const;
