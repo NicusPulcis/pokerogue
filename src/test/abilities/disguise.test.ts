@@ -7,7 +7,6 @@ import { Abilities } from "#enums/abilities";
 import { Species } from "#enums/species";
 import { StatusEffect } from "#app/data/status-effect.js";
 import { MoveEffectPhase, MoveEndPhase, TurnEndPhase, TurnInitPhase } from "#app/phases.js";
-import { BattlerTagType } from "#app/enums/battler-tag-type.js";
 import { BattleStat } from "#app/data/battle-stat.js";
 
 const TIMEOUT = 20 * 1000;
@@ -48,7 +47,6 @@ describe("Abilities - Disguise", () => {
     const maxHp = mimikyu.getMaxHp();
     const disguiseDamage = Math.floor(maxHp / 8);
 
-    expect(mimikyu.getTag(BattlerTagType.DISGUISE)).toBeDefined();
     expect(mimikyu.formIndex).toBe(disguisedForm);
 
     game.doAttack(getMovePosition(game.scene, 0, Moves.SHADOW_SNEAK));
@@ -57,7 +55,6 @@ describe("Abilities - Disguise", () => {
 
     expect(mimikyu.hp).equals(maxHp - disguiseDamage);
     expect(mimikyu.formIndex).toBe(bustedForm);
-    expect(mimikyu.getTag(BattlerTagType.DISGUISE)).toBeUndefined();
   }, TIMEOUT);
 
   it("doesn't break disguise when attacked with ineffective move", async () => {
@@ -65,14 +62,12 @@ describe("Abilities - Disguise", () => {
 
     const mimikyu = game.scene.getEnemyPokemon();
 
-    expect(mimikyu.getTag(BattlerTagType.DISGUISE)).toBeDefined();
     expect(mimikyu.formIndex).toBe(disguisedForm);
 
     game.doAttack(getMovePosition(game.scene, 0, Moves.VACUUM_WAVE));
 
     await game.phaseInterceptor.to(MoveEndPhase);
 
-    expect(mimikyu.getTag(BattlerTagType.DISGUISE)).toBeDefined();
     expect(mimikyu.formIndex).toBe(disguisedForm);
   }, TIMEOUT);
 
@@ -85,7 +80,6 @@ describe("Abilities - Disguise", () => {
     const maxHp = mimikyu.getMaxHp();
     const disguiseDamage = Math.floor(maxHp / 8);
 
-    expect(mimikyu.getTag(BattlerTagType.DISGUISE)).toBeDefined();
     expect(mimikyu.formIndex).toBe(disguisedForm);
 
     game.doAttack(getMovePosition(game.scene, 0, Moves.SURGING_STRIKES));
@@ -94,13 +88,11 @@ describe("Abilities - Disguise", () => {
     await game.phaseInterceptor.to(MoveEffectPhase);
     expect(mimikyu.hp).equals(maxHp - disguiseDamage);
     expect(mimikyu.formIndex).toBe(disguisedForm);
-    expect(mimikyu.getTag(BattlerTagType.ICE_FACE)).toBeUndefined();
 
     // Second hit
     await game.phaseInterceptor.to(MoveEffectPhase);
     expect(mimikyu.hp).lessThan(maxHp - disguiseDamage);
     expect(mimikyu.formIndex).toBe(bustedForm);
-    expect(mimikyu.getTag(BattlerTagType.DISGUISE)).toBeUndefined();
   }, TIMEOUT);
 
   it("takes effects from status moves and damage from status effects", async () => {
@@ -113,7 +105,6 @@ describe("Abilities - Disguise", () => {
 
     await game.phaseInterceptor.to(TurnEndPhase);
 
-    expect(mimikyu.getTag(BattlerTagType.DISGUISE)).toBeDefined();
     expect(mimikyu.formIndex).toBe(disguisedForm);
     expect(mimikyu.status.effect).toBe(StatusEffect.POISON);
     expect(mimikyu.summonData.battleStats[BattleStat.SPD]).toBe(-1);
@@ -135,7 +126,6 @@ describe("Abilities - Disguise", () => {
 
     await game.phaseInterceptor.to(TurnEndPhase);
 
-    expect(mimikyu.getTag(BattlerTagType.DISGUISE)).toBeUndefined();
     expect(mimikyu.formIndex).toBe(bustedForm);
     expect(mimikyu.hp).equals(maxHp - disguiseDamage);
 
@@ -146,7 +136,6 @@ describe("Abilities - Disguise", () => {
     mimikyu = game.scene.getParty()[1];
 
     expect(mimikyu.formIndex).toBe(bustedForm);
-    expect(mimikyu.getTag(BattlerTagType.DISGUISE)).toBeUndefined();
   }, TIMEOUT);
 
   it("reverts to Disguised on arena reset", async () => {
@@ -165,7 +154,6 @@ describe("Abilities - Disguise", () => {
     const mimikyu = game.scene.getPlayerPokemon();
 
     expect(mimikyu.formIndex).toBe(bustedForm);
-    expect(mimikyu.getTag(BattlerTagType.DISGUISE)).toBeUndefined();
 
     game.doAttack(getMovePosition(game.scene, 0, Moves.ICE_BEAM));
     await game.doKillOpponents();
@@ -174,7 +162,6 @@ describe("Abilities - Disguise", () => {
     await game.phaseInterceptor.to(TurnInitPhase);
 
     expect(mimikyu.formIndex).toBe(disguisedForm);
-    expect(mimikyu.getTag(BattlerTagType.DISGUISE)).toBeDefined();
   }, TIMEOUT);
 
   it("cannot be suppressed", async () => {
@@ -188,7 +175,6 @@ describe("Abilities - Disguise", () => {
 
     const mimikyu = game.scene.getEnemyPokemon();
 
-    expect(mimikyu.getTag(BattlerTagType.DISGUISE)).toBeDefined();
     expect(mimikyu.formIndex).toBe(disguisedForm);
     expect(mimikyu.summonData.abilitySuppressed).toBe(false);
   }, TIMEOUT);
@@ -204,7 +190,6 @@ describe("Abilities - Disguise", () => {
 
     const mimikyu = game.scene.getEnemyPokemon();
 
-    expect(mimikyu.getTag(BattlerTagType.DISGUISE)).toBeDefined();
     expect(mimikyu.formIndex).toBe(disguisedForm);
     expect(mimikyu.hasAbility(Abilities.DISGUISE)).toBe(true);
   }, TIMEOUT);
@@ -220,7 +205,6 @@ describe("Abilities - Disguise", () => {
 
     await game.phaseInterceptor.to(TurnInitPhase);
 
-    expect(mimikyu.getTag(BattlerTagType.DISGUISE)).toBeDefined();
     expect(mimikyu.formIndex).toBe(disguisedForm);
     expect(game.scene.getPlayerPokemon().hasAbility(Abilities.TRACE)).toBe(true);
   }, TIMEOUT);
