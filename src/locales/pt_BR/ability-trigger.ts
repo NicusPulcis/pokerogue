@@ -59,5 +59,5 @@ export const abilityTriggers: SimpleTranslationEntries = {
   "postSummonSwordOfRuin": "Sword of Ruin de {{pokemonNameWithAffix}} reduziu a {{statName}}\nde todos os Pokémon em volta!",
   "postSummonTabletsOfRuin": "Tablets of Ruin de {{pokemonNameWithAffix}} reduziu o {{statName}}\nde todos os Pokémon em volta!",
   "postSummonBeadsOfRuin": "Beads of Ruin de {{pokemonNameWithAffix}} reduziu a {{statName}}\nde todos os Pokémon em volta!",
-  "disguiseAvoidedDamage" : "{{pokemonName}}'s disguise was busted!",
+  "disguiseAvoidedDamage" : "O disfarce de {{pokemonName}} foi descoberto!",
 } as const;
