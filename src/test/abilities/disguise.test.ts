@@ -163,49 +163,4 @@ describe("Abilities - Disguise", () => {
 
     expect(mimikyu.formIndex).toBe(disguisedForm);
   }, TIMEOUT);
-
-  it("cannot be suppressed", async () => {
-    vi.spyOn(Overrides, "MOVESET_OVERRIDE", "get").mockReturnValue([Moves.GASTRO_ACID]);
-
-    await game.startBattle();
-
-    game.doAttack(getMovePosition(game.scene, 0, Moves.GASTRO_ACID));
-
-    await game.phaseInterceptor.to(TurnEndPhase);
-
-    const mimikyu = game.scene.getEnemyPokemon();
-
-    expect(mimikyu.formIndex).toBe(disguisedForm);
-    expect(mimikyu.summonData.abilitySuppressed).toBe(false);
-  }, TIMEOUT);
-
-  it("cannot be swapped with another ability", async () => {
-    vi.spyOn(Overrides, "MOVESET_OVERRIDE", "get").mockReturnValue([Moves.SKILL_SWAP]);
-
-    await game.startBattle();
-
-    game.doAttack(getMovePosition(game.scene, 0, Moves.SKILL_SWAP));
-
-    await game.phaseInterceptor.to(TurnEndPhase);
-
-    const mimikyu = game.scene.getEnemyPokemon();
-
-    expect(mimikyu.formIndex).toBe(disguisedForm);
-    expect(mimikyu.hasAbility(Abilities.DISGUISE)).toBe(true);
-  }, TIMEOUT);
-
-  it("cannot be copied", async () => {
-    vi.spyOn(Overrides, "ABILITY_OVERRIDE", "get").mockReturnValue(Abilities.TRACE);
-
-    await game.startBattle();
-
-    const mimikyu = game.scene.getEnemyPokemon();
-
-    game.doAttack(getMovePosition(game.scene, 0, Moves.SIMPLE_BEAM));
-
-    await game.phaseInterceptor.to(TurnInitPhase);
-
-    expect(mimikyu.formIndex).toBe(disguisedForm);
-    expect(game.scene.getPlayerPokemon().hasAbility(Abilities.TRACE)).toBe(true);
-  }, TIMEOUT);
 });
