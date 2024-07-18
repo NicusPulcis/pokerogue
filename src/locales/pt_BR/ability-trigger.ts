@@ -13,7 +13,6 @@ export const abilityTriggers: SimpleTranslationEntries = {
   "blockItemTheft": "{{abilityName}} de {{pokemonNameWithAffix}}\nprevine o roubo de itens!",
   "typeImmunityHeal": "{{abilityName}} de {{pokemonNameWithAffix}}\nrestaurou um pouco de PS!",
   "nonSuperEffectiveImmunity": "{{pokemonNameWithAffix}} evitou dano\ncom {{abilityName}}!",
-  "postDefendDisguise": "O disfarce de {{pokemonNameWithAffix}} foi descoberto!",
   "moveImmunity": "Isso não afeta {{pokemonNameWithAffix}}!",
   "reverseDrain": "{{pokemonNameWithAffix}} absorveu a gosma líquida!",
   "postDefendTypeChange": "{{abilityName}} de {{pokemonNameWithAffix}}\ntransformou-o no tipo {{typeName}}!",
@@ -59,5 +58,5 @@ export const abilityTriggers: SimpleTranslationEntries = {
   "postSummonSwordOfRuin": "Sword of Ruin de {{pokemonNameWithAffix}} reduziu a {{statName}}\nde todos os Pokémon em volta!",
   "postSummonTabletsOfRuin": "Tablets of Ruin de {{pokemonNameWithAffix}} reduziu o {{statName}}\nde todos os Pokémon em volta!",
   "postSummonBeadsOfRuin": "Beads of Ruin de {{pokemonNameWithAffix}} reduziu a {{statName}}\nde todos os Pokémon em volta!",
-  "disguiseAvoidedDamage" : "O disfarce de {{pokemonName}} foi descoberto!",
+  "disguiseAvoidedDamage" : "O disfarce de {{pokemonNameWithAffix}} foi descoberto!",
 } as const;

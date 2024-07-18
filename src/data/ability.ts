@@ -3887,7 +3887,7 @@ export class DisguiseBlockDamageAbAttr extends ReceivedMoveDamageMultiplierAbAtt
    * @returns {string} - The trigger message.
    */
   getTriggerMessage(pokemon: Pokemon, abilityName: string, ...args: any[]): string {
-    return i18next.t("abilityTriggers:disguiseAvoidedDamage", { pokemonName: pokemon.name, abilityName: abilityName });
+    return i18next.t("abilityTriggers:disguiseAvoidedDamage", { pokemonNameWithAffix: getPokemonNameWithAffix(pokemon), abilityName: abilityName });
   }
 }
 

@@ -13,7 +13,7 @@ export const abilityTriggers: SimpleTranslationEntries = {
   "blockItemTheft": "{{abilityName}} di {{pokemonNameWithAffix}}\nlo rende immune ai furti!",
   "typeImmunityHeal": "{{pokemonName}} recupera alcuni PS\ncon {{abilityName}}!",
   "nonSuperEffectiveImmunity": "{{pokemonNameWithAffix}} evita il colpo\ncon {{abilityName}}!",
-  "postDefendDisguise": "{{pokemonNameWithAffix}} è stato smascherato!",
+  "disguiseAvoidedDamage": "{{pokemonNameWithAffix}} è stato smascherato!",
   "moveImmunity": "Non ha effetto su {{pokemonNameWithAffix}}!",
   "reverseDrain": "{{pokemonNameWithAffix}} ha assorbito la melma!",
   "postDefendTypeChange": "{{abilityName}} di {{pokemonNameWithAffix}}\nlo ha reso di tipo {{typeName}}!",
@@ -59,5 +59,4 @@ export const abilityTriggers: SimpleTranslationEntries = {
   "postSummonSwordOfRuin": "{{pokemonNameWithAffix}}'s Sword of Ruin lowered the {{statName}}\nof all surrounding Pokémon!",
   "postSummonTabletsOfRuin": "{{pokemonNameWithAffix}}'s Tablets of Ruin lowered the {{statName}}\nof all surrounding Pokémon!",
   "postSummonBeadsOfRuin": "{{pokemonNameWithAffix}}'s Beads of Ruin lowered the {{statName}}\nof all surrounding Pokémon!",
-  "disguiseAvoidedDamage" : "{{pokemonName}}'s disguise was busted!",
 } as const;
